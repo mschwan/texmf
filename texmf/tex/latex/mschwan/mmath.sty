@@ -1,0 +1,117 @@
+% This is free and unencumbered software released into the public domain.
+%
+% Anyone is free to copy, modify, publish, use, compile, sell, or
+% distribute this software, either in source code form or as a compiled
+% binary, for any purpose, commercial or non-commercial, and by any
+% means.
+%
+% In jurisdictions that recognize copyright laws, the author or authors
+% of this software dedicate any and all copyright interest in the
+% software to the public domain. We make this dedication for the benefit
+% of the public at large and to the detriment of our heirs and
+% successors. We intend this dedication to be an overt act of
+% relinquishment in perpetuity of all present and future rights to this
+% software under copyright law.
+%
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+% EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+% MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+% IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+% OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+% ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+% OTHER DEALINGS IN THE SOFTWARE.
+%
+% For more information, please refer to <http://unlicense.org>
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mmath}
+
+\RequirePackage{amsmath}
+\RequirePackage{xfrac}
+\RequirePackage{textcomp} % \textmu etc., should be obsolete
+\RequirePackage{siunitx}
+
+% Overwrite or create command with \declarecommand
+\makeatletter
+\newcommand*{\declarecommand}{%
+    \@star@or@long\declare@command
+}
+\newcommand*{\declare@command}[1]{%
+    \provide@command{#1}{}%
+    \renew@command{#1}%
+}
+\makeatother
+
+% Bold greek letters in section titles
+\makeatletter
+\g@addto@macro\bfseries{\boldmath}
+\makeatother
+
+% Complex numbers
+\declarecommand{\im}[1]{\mathrm{Im} \left \{ #1 \right \}}
+\declarecommand{\re}[1]{\mathrm{Re} \left \{ #1 \right \}}
+\declarecommand{\ul}[1]{\underline{#1}}
+\declarecommand{\ol}[1]{\overline{#1}}
+\declarecommand{\e}{\mathrm{e}}
+\declarecommand{\j}{\mathrm{j}}
+
+% mathematical conditions
+\newcommand{\with}{\hspace{2em} \text{mit} \hspace{1em}}
+
+% displaystyle \sfrac
+\newcommand{\dsfrac}[2]{\displaystyle\sfrac{#1}{#2}}
+
+% differential operator
+\declarecommand{\diff}{\,\mathrm{d}}
+
+\newcommand{\sub}[1]{_\mathrm{#1}}
+\newcommand{\super}[1]{^\mathrm{#1}}
+
+
+% Units
+\newcommand{\picoVolt}{\,\si{\pico\volt}}
+\newcommand{\nanoVolt}{\,\si{\nano\volt}}
+\newcommand{\microVolt}{\,\si{\micro\volt}}
+\newcommand{\milliVolt}{\,\si{\milli\volt}}
+\newcommand{\Volt}{\,\si{\volt}}
+\newcommand{\kiloVolt}{\,\si{\kilo\volt}}
+
+\newcommand{\picoAmpere}{\,\si{\pico\ampere}}
+\newcommand{\nanoAmpere}{\,\si{\nano\ampere}}
+\newcommand{\microAmpere}{\,\si{\micro\ampere}}
+\newcommand{\milliAmpere}{\,\si{\milli\ampere}}
+\newcommand{\Ampere}{\,\si{\ampere}}
+\newcommand{\kiloAmpere}{\,\si{\kilo\ampere}}
+
+\newcommand{\microWatt}{\,\si{\micro\watt}}
+\newcommand{\milliWatt}{\,\si{\milli\watt}}
+\newcommand{\Watt}{\,\si{\watt}}
+\newcommand{\kiloWatt}{\,\si{\kilo\watt}}
+\newcommand{\megaWatt}{\,\si{\mega\watt}}
+
+\newcommand{\Hertz}{\,\si{\hertz}}
+\newcommand{\kiloHertz}{\,\si{\kilo\hertz}}
+\newcommand{\megaHertz}{\,\si{\mega\hertz}}
+\newcommand{\gigaHertz}{\,\si{\giga\hertz}}
+
+\newcommand{\Meter}{\,\mathrm{m}}
+\newcommand{\milliMeter}{\,\mathrm{mm}}
+\newcommand{\centiMeter}{\,\mathrm{cm}}
+
+\newcommand{\milliSeconds}{\,\si{\milli\second}}
+\newcommand{\microSeconds}{\,\si{\micro\second}}
+\newcommand{\Seconds}{\,\si{\second}}
+
+\newcommand{\Ohm}{\,\si{\ohm}}
+\newcommand{\kiloOhm}{\,\si{\kilo\ohm}}
+\newcommand{\megaOhm}{\,\si{\mega\ohm}}
+
+\newcommand{\picoFarad}{\,\si{\pico\farad}}
+\newcommand{\nanoFarad}{\,\si{\nano\farad}}
+\newcommand{\microFarad}{\,\si{\micro\farad}}
+
+\newcommand{\dB}{\,\mathrm{dB}}
+
+\newcommand{\Kelvin}{\,\mathrm{K}}
+
+\newcommand{\Celcius}{\,^\circ\mathrm{C}}
