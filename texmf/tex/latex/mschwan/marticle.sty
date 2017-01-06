@@ -31,6 +31,7 @@
 \RequirePackage{tikz}
 \RequirePackage{circuitikz}
 \RequirePackage{sectsty}
+\RequirePackage{titlesec}
 \RequirePackage{xcolor}
 \RequirePackage{caption}
 \RequirePackage{fancyhdr}
@@ -47,6 +48,9 @@
 \subsubsectionfont{\normalsize}
 \allowdisplaybreaks
 \captionsetup{labelfont=bf}
+
+% chapter formatting
+\titleformat{\chapter}{\bfseries\Huge}{\thechapter}{20pt}{\bfseries\Huge}
 
 % fancy headers
 \pagestyle{fancy}
