@@ -26,11 +26,11 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{marticle}
 
+\RequirePackage{lmodern}
 \RequirePackage{graphicx}
 \RequirePackage{float}
 \RequirePackage{tikz}
 \RequirePackage{circuitikz}
-\RequirePackage{sectsty}
 \RequirePackage{titlesec}
 \RequirePackage{xcolor}
 \RequirePackage{caption}
@@ -41,16 +41,14 @@
 \RequirePackage[fleqn]{amsmath}
 \RequirePackage[a4paper, inner=1.5in, outer=1in]{geometry}
 
-% section and chapter title font size
-\chapterfont{\huge}
-\sectionfont{\Large}
-\subsectionfont{\large}
-\subsubsectionfont{\normalsize}
+% allow to break displays such as long math equations
 \allowdisplaybreaks
-\captionsetup{labelfont=bf}
 
-% chapter formatting
-\titleformat{\chapter}{\bfseries\huge}{\thechapter}{20pt}{\bfseries\huge}
+% chapter and section title formatting
+\titleformat{\chapter}{\bfseries\LARGE}{\thechapter}{20pt}{}
+\titleformat{\section}{\bfseries\Large}{\thesection}{1em}{}
+\titleformat{\subsection}{\bfseries\large}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\bfseries\normalsize}{\thesubsubsection}{1em}{}
 
 % fancy headers
 \pagestyle{fancy}
