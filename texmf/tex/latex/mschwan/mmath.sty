@@ -29,7 +29,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{xfrac}
 \RequirePackage{textcomp} % \textmu etc., should be obsolete
-\RequirePackage{siunitx}
+\RequirePackage[valuesep=thick]{siunitx}
 
 % Overwrite or create command with \declarecommand
 \makeatletter
@@ -67,11 +67,11 @@
 % differential operator
 \declarecommand{\diff}{\,\mathrm{d}}
 
+% super and subscript
 \newcommand{\sub}[1]{_\mathrm{#1}}
 \newcommand{\super}[1]{^\mathrm{#1}}
 
-
-% Units
+% units
 \newcommand{\picovolt}{\,\si{\pico\volt}}
 \newcommand{\nanovolt}{\,\si{\nano\volt}}
 \newcommand{\microvolt}{\,\si{\micro\volt}}
@@ -142,8 +142,8 @@
 
 \newcommand{\celcius}{\,^\circ\mathrm{C}}
 
-\newcommand{\lux}{\,\mathrm{lx}}
-\newcommand{\lumen}{\,\mathrm{lm}}
+\newcommand{\lux}{\,\si{\lux}}
+\newcommand{\lumen}{\,\si{\lumen}}
 \newcommand{\candela}{\,\mathrm{cd}}
 
 \newcommand{\milliamperehour}{\,\mathrm{mAh}}
