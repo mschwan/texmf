@@ -30,6 +30,7 @@
 \let\@thesis\@empty
 \let\@university\@empty
 \let\@department\@empty
+\let\@course\@empty
 \let\@matrnumber\@empty
 \let\@supervisor\@empty
 \let\@supervisorext\@empty
@@ -39,6 +40,7 @@
 \newcommand{\thesis}[1]{\gdef\@thesis{#1}}
 \newcommand{\university}[1]{\gdef\@university{#1}}
 \newcommand{\department}[1]{\gdef\@department{#1}}
+\newcommand{\course}[1]{\gdef\@course{#1}}
 \newcommand{\matrnumber}[1]{\gdef\@matrnumber{#1}}
 \newcommand{\supervisor}[1]{\gdef\@supervisor{#1}}
 \newcommand{\supervisorext}[1]{\gdef\@supervisorext{#1}}
@@ -70,6 +72,20 @@
     }{}
 }
 
+\providecommand*{\thecourse}{course of studies: }
+\AtBeginDocument{
+    \@ifpackagewith{babel}{english}{
+        \addto\captionsenglish{
+            \renewcommand*\thecourse{course of studies: }
+        }
+    }{}
+    \@ifpackagewith{babel}{ngerman}{
+        \addto\captionsngerman{
+            \renewcommand*\thecourse{Studiengang: }
+        }
+    }{}
+}
+
 \renewcommand\maketitle{
     \thispagestyle{empty}
     \vspace{5ex}
@@ -84,7 +100,8 @@
          \@department
          \par\vspace{3ex}}
         {{\textbf\@author}\\
-         \matriculationnumber\@matrnumber
+         \matriculationnumber\@matrnumber\\
+         \thecourse\@course
          \par\vspace{5ex}}
         {\@date\par}
     \end{center}
