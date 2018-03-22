@@ -57,6 +57,7 @@
     }{}
     \@ifpackagewith{babel}{ngerman}{%
         \addto\captionsngerman{\renewcommand*\supervisedby{Betreut durch:}}%
+        \addto\captionsngerman{\renewcommand*\supervisedby{Betreuer:}}%
     }{}
 }
 
@@ -109,8 +110,9 @@
         {\@date\par}
     \end{center}
     \vfill
-    {\textbf\supervisedby\par}
+    {\bfseries Erstpr\"ufer:\par}
     {\@supervisor\\\@university\par}
+    {\textbf\supervisedby\par}
     {\@supervisorext\\\@departmentext\\\@organizationext\par}
 }
 
